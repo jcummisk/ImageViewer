@@ -70,30 +70,31 @@
 }
 /***** snap view css *****/
 .iv-snap-view {
-  width: 150px;
-  height: 150px;
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  border: 1px solid #666;
-  background: black;
-  z-index: 100;
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  -webkit-transition: all ease 400ms;
-  -moz-transition: all ease 400ms;
-  -o-transition: all ease 400ms;
-  transition: all ease 400ms;
-  opacity: 0;
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: -8px;
+    left: 20px;
+    border: none;
+    background: transparent;
+    z-index: 100;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    -webkit-transition: all ease 400ms;
+    -moz-transition: all ease 400ms;
+    -o-transition: all ease 400ms;
+    transition: all ease 400ms;
+    opacity: 0;
 }
 
 .iv-snap-image-wrap {
   display: inline-block;
   position: absolute;
+  border-radius: 2px;
   max-width: 150px;
   max-height: 150px;
-  top: 50%;
+  top: 52%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
@@ -119,27 +120,61 @@
   -moz-box-shadow: 0px 0px 0px 200px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 0px 0px 200px rgba(0, 0, 0, 0.5);
 }
-
+.iv-zoom-slider::after{
+    content: '+';
+    font-family: 'font-aweseome';
+    font-size: 1em;
+    color: #fff;
+    font-weight: bold;
+    right: -1px;
+    display: block;
+    margin-top: 0px;
+    position: absolute;
+    width:20px;
+    height:20px;
+    text-align: center;
+    border-radius: 100%;
+}
 /*** zoom slider ***/
 .iv-zoom-slider {
-  width: 100%;
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  border: 1px solid #666;
-  border-top: 0;
-  background: rgba(204, 204, 204, 0.1);
-  height: 15px;
-  position: absolute;
-  top: 150px;
-  left: -1px;
+      width: 100%;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    /* border: 1px solid #666; */
+    border-top: 0;
+/*    background:rgba(114, 159, 233, .78);*/
+    background:rgba(61, 61, 61,.7);
+    height: 20px;
+    position: absolute;
+    border-radius: 2px;
+    top: 130px;
+    left: -1px;
 }
-
+.iv-zoom-slider::before{
+ content: '-';
+    font-family: 'font-aweseome';
+    font-size: 1em;
+    color: #fff;
+    font-weight: bold;
+    left: -2px;
+    display: block;
+    margin-top: 0px;
+    position: absolute;
+    width:20px;
+    height:20px;
+    text-align: center;
+    border-radius: 100%;
+    
+}
 .iv-zoom-handle {
-  width: 20px;
-  height: 15px;
-  background: #ccc;
-  position: absolute;
+    width: 16px;
+    top: -2px;
+    height: 22px;
+    background: #fff;
+    box-shadow: 0px 0px 3px rgba(0,0,0,.4);
+    position: absolute;
+    z-index: 1000;
 }
 
 /**** snap view css end *****/
@@ -166,6 +201,7 @@
   -ms-transform: translate3d(0, 0, 0);
   -o-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
+    
 }
 
 /****** CSS loader by http://projects.lukehaas.me/css-loaders/ *****/
@@ -223,4 +259,10 @@
     z-index: -1;
     visibility: hidden;
   }
+}
+
+span.comment{
+    font-size: .8em;
+    color:#fff;
+    font-style: oblique;
 }
